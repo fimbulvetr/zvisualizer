@@ -1,27 +1,33 @@
-function _zvizBookmarklet() {  
-  var host = "169.254.233.41"; //"localhost";
-  var head = document.getElementsByTagName("head")[0];
-  var script = document.createElement("script");
-  script.id = "zvizScript";
-  script.type="text/javascript";
-  script.src="http://" + host + "/zViz/dist/zviz.dist.js?t=" + (new Date()).getTime() ;
-  var done = false;
-  script.onload = script.onreadystatechange = function(){
-    if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") ) {
-      script.onload = script.onreadystatechange = null;
-    }
-  };
-  script.onerror = function() {
-    alert("problem loading!");
-  };
-  head.appendChild(script);
-}
+(function(rootPath) {
 
-function _toBookmarklet(fn) {
-    return "javascript:(" + fn.toString().replace(/\n/g, "").replace(/^(function)([^\(]*)\(/, "$1(") + ")()";
-}
+	function _zvizBookmarklet() {  
+	  var head = document.getElementsByTagName("head")[0];
+	  var script = document.createElement("script");
+	  script.id = "zvizScript";
+	  script.type="text/javascript";
+	  script.src="{0}/zviz.dist.js?t=" + (new Date()).getTime() ;
+	  var _onError = function() {
+		head.removeChild(script); 
+		alert("Problem loading!");
+	  };	  
+	  var done = false;
+	  script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") ) {
+		  script.onload = script.onreadystatechange = null;
+		  if (typeof(zviz)=="undefined" || zviz===null) _onError();
+		}
+	  };
+	  script.onerror = function() {
+		_onError();
+	  };
+	  head.appendChild(script);
+	}
 
-function generate() {
+	function _toBookmarklet(fn) {
+		return "javascript:(" + fn.toString().replace("{0}", rootPath).replace(/\n/g, "").replace(/^(function)([^\(]*)\(/, "$1(") + ")()";
+	}
+
 	var s = _toBookmarklet(_zvizBookmarklet);
 	document.getElementById("bookmarklet").href=s;
-}
+	
+})("http://169.254.233.41/zvisualizer/dist");	// "169.254.233.41"; //"localhost";

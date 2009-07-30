@@ -26,7 +26,7 @@
  
 #zVisualizer {position:absolute !important; z-Index: 99999 !important; width: 600px; height: 350px; text-align: left !important; border: 1px solid #333333; /*_border: 0px none;*/ background-color: #F1EDED !important; padding: 3px !important; overflow:hidden !important; -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/;}
 #zVisualizer div.hd { height: 20px; background-color: black !important; color: white !important; padding: 0 8px; font-family: "Trebuchet MS","Helvetica","Arial","Verdana","sans-serif" !important; font-size: 13px !important; position:relative !important; }
-#zVisualizer div.hd a.reload , #zVisualizer div.hd a.close, #zVisualizer div.hd a.toggleSecondary { text-decoration: none; display:block; width: 16px; height: 16px; position: absolute; top: 2px; cursor: pointer; background: no-repeat scroll 0 0;}
+#zVisualizer div.hd a.reload , #zVisualizer div.hd a.close, #zVisualizer div.hd a.toggleSecondary { text-decoration: none; display:block; width: 16px; height: 16px; font-size: 0 !important; position: absolute; top: 2px; cursor: pointer; background: no-repeat scroll 0 0;}
 #zVisualizer div.hd a.close { 
 	right: 2px; 
 	background-image: url(images/close.gif); /** sprite-ref: icons; */ 
@@ -45,12 +45,12 @@
 #zVisualizer div.results { font-size: 11px !important; font-family: Arial, Helvetica, sans-serif !important; background-color: white !important; color: black !important;padding: 3px 0 0 3px!important;  overflow:auto !important; border: 1px solid #DFDFDF !important; border-top: 0px none !important; height: 315px;}
 #zVisualizer div.ft { font-size: 10px !important; font-family: Arial, Helvetica, sans-serif !important; height: 11px !important; line-height: 11px !important; background-color: #F1EDED !important; padding-left: 5px !important;}
 #zVisualizer div.children {padding-left:14px;  }
-#zVisualizer span.xtrigger { float:left; display:inline; width:11px; height: 11px; background: transparent no-repeat scroll 0 2px; cursor: pointer;}
+#zVisualizer span.xtrigger { float:left; display:inline; width:11px; height: 11px; font-size:0 !important; background: transparent no-repeat scroll 0 2px; cursor: pointer;}
 #zVisualizer span.xtrigger.plus { 
-	background-image: url(images/plus.gif);  /** sprite-ref: icons; sprite-margin-top: 2px */ 
+	background-image: url(images/plus.gif);  /** sprite-ref: icons; sprite-margin-bottom: 2px */ 
 }
 #zVisualizer span.xtrigger.minus { 
-	background-image: url(images/minus.gif);   /** sprite-ref: icons; sprite-margin-top: 2px */ 
+	background-image: url(images/minus.gif);   /** sprite-ref: icons; sprite-margin-bottom: 2px */ 
 }
 #zVisualizer .resultElem p {margin:0;padding-bottom: 3px; cursor: default;font-size: 11px !important; font-family: Arial, Helvetica, sans-serif !important;}
 #zVisualizer .selected {color: white !important; background-color: #3399FF !important; _zoom: 1;}

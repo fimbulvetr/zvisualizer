@@ -22,7 +22,11 @@
  * $Date: $
  * $Rev: $ 
  */
- 
+// in case zviz already loaded...
+if (typeof zviz != "undefined" && zviz && zviz.destroy) {
+	zviz.destroy();
+}
+
 // put our jQuery dependencies into our own namespace
 var zviz = {};
 zviz.jQuery = jQuery.noConflict(true);
@@ -30,8 +34,8 @@ zviz.jQuery = jQuery.noConflict(true);
 //==================== begin zViz =====================
 
 (function($) {
-	var host = "169.254.233.41"; //"localhost";
-	var styles = "<link type='text/css' rel='stylesheet' href='" + "http://" + host + "/zViz/dist/zviz.min.css" + "?t=" + (new Date()).getTime() + "' id='zvizStylesheet'/>";	
+	var styleHref = "http://169.254.233.41/zvisualizer/dist/zviz.min.css"; // "169.254.233.41"; //"localhost";
+	var styles = "<link type='text/css' rel='stylesheet' href='" + styleHref + "?t=" + (new Date()).getTime() + "' id='zvizStylesheet'/>";	
     $("head").append(styles);		
 	
 	// printing functions
@@ -319,7 +323,7 @@ zviz.jQuery = jQuery.noConflict(true);
 	
 	//------ destroy and cleanup zVisualizer --------
 	
-	function _destroy() {
+	function destroy() {
 		$("#zvizStylesheet, #zvizScript, #zVisualizer, #zVisualizerHL, #zVisualizerShim, #zVisualizerTooltip ").remove();
 		zviz.jQuery = null;
 		zviz = null;
@@ -328,7 +332,8 @@ zviz.jQuery = jQuery.noConflict(true);
 		rootResult=null;
 		_detachKeys();
 	}	
-	$("#zVisualizer div.hd a.close").click(_destroy);	
+	$("#zVisualizer div.hd a.close").click(destroy);	
+	zviz.destroy = destroy;	
 	
 	//------ when too many results, show a simplified view --------
 	
