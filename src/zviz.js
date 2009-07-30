@@ -34,7 +34,7 @@ zviz.jQuery = jQuery.noConflict(true);
 //==================== begin zViz =====================
 
 (function($) {
-	var styleHref = "http://169.254.233.41/zvisualizer/dist/zviz.min.css"; // "169.254.233.41"; //"localhost";
+	var styleHref = "http://users.tpg.com.au/fuzziman/zvisualizer/dist//zviz.min.css" //"http://169.254.233.41/zvisualizer/dist/zviz.min.css"; // "169.254.233.41"; //"localhost";
 	var styles = "<link type='text/css' rel='stylesheet' href='" + styleHref + "?t=" + (new Date()).getTime() + "' id='zvizStylesheet'/>";	
     $("head").append(styles);		
 	

@@ -30,4 +30,4 @@
 	var s = _toBookmarklet(_zvizBookmarklet);
 	document.getElementById("bookmarklet").href=s;
 	
-})("http://169.254.233.41/zvisualizer/dist");	// "169.254.233.41"; //"localhost";
+})("http://users.tpg.com.au/fuzziman/zvisualizer/dist");	// "http://169.254.233.41/zvisualizer/dist"; //"http://localhost/zvisualizer/dist";
