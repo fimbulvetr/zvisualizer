@@ -47,10 +47,10 @@
 #zVisualizer div.children {padding-left:14px;  }
 #zVisualizer span.xtrigger { float:left; display:inline; width:11px; height: 11px; font-size:0 !important; background: transparent no-repeat scroll 0 2px; cursor: pointer;}
 #zVisualizer span.xtrigger.plus { 
-	background-image: url(images/plus.gif);  /** sprite-ref: icons; sprite-margin-bottom: 2px */ 
+	background-image: url(images/plus.gif);  /** sprite-ref: icons; sprite-margin-top: 2px */ 
 }
 #zVisualizer span.xtrigger.minus { 
-	background-image: url(images/minus.gif);   /** sprite-ref: icons; sprite-margin-bottom: 2px */ 
+	background-image: url(images/minus.gif);   /** sprite-ref: icons; sprite-margin-top: 2px */ 
 }
 #zVisualizer .resultElem p {margin:0;padding-bottom: 3px; cursor: default;font-size: 11px !important; font-family: Arial, Helvetica, sans-serif !important;}
 #zVisualizer .selected {color: white !important; background-color: #3399FF !important; _zoom: 1;}
